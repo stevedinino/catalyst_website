@@ -54,6 +54,46 @@ img {
   border-radius: 8px;
 }
 
+/* Hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 1em;
+    text-align: center;
+  }
+}
+
 /* Header */
 
 header {
