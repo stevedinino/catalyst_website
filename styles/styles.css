@@ -26,13 +26,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 /* -----------------------------------
    Layout Containers
 ----------------------------------- */
-.menu-toggle {
-  display: none;
-}
 .page-wrapper {
   padding: 2rem;
 }
@@ -85,15 +89,6 @@ nav ul {
 }
 nav li a {
   font-weight: 500;
-}
-
-/* Hamburger Menu */
-.menu-toggle {
-  display: none;
-  font-size: 2em;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
 /* -----------------------------------
@@ -273,5 +268,4 @@ footer img {
     padding: 1em;
     text-align: center;
   }
-
 }
