@@ -37,6 +37,11 @@ img {
 /* -----------------------------------
    Layout Containers
 ----------------------------------- */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
 .page-wrapper {
   padding: 2rem;
 }
@@ -269,3 +274,4 @@ footer img {
     text-align: center;
   }
 }
+
