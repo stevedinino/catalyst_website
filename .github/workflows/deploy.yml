@@ -18,7 +18,7 @@ jobs:
           server: ftp.catalystlegalnurse.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./catalyst_website
+          local-dir: ./catalyst_website/
           server-dir: /
           exclude: |
             .github*
