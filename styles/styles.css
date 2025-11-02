@@ -30,6 +30,9 @@ img {
 /* -----------------------------------
    Layout Containers
 ----------------------------------- */
+.menu-toggle {
+  display: none;
+}
 .page-wrapper {
   padding: 2rem;
 }
@@ -270,4 +273,5 @@ footer img {
     padding: 1em;
     text-align: center;
   }
+
 }
