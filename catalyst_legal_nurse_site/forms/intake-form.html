@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intake Form | Catalyst Legal Nurse Consulting</title>
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <style>
+    .intake-form {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .intake-form h1,
+    .intake-form h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .checkbox-group {
+      margin-top: 1rem;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .notes {
+      height: 150px;
+    }
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .logo img {
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Catalyst Logo" />
+    </div>
+
+  </header>
+
+  <main class="intake-form">
+    <h1>Catalyst Legal Nurse Consulting</h1>
+    <h2>Confidential Case Intake Form</h2>
+
+    <form>
+      <label for="attorney">Attorney Name</label>
+      <input type="text" id="attorney" name="attorney" />
+
+      <label for="firm">Law Firm</label>
+      <input type="text" id="firm" name="firm" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" />
+
+      <label for="case">Case Name / Number</label>
+      <input type="text" id="case" name="case" />
+
+      <label for="jurisdiction">Jurisdiction</label>
+      <input type="text" id="jurisdiction" name="jurisdiction" />
+
+      <label for="side">Plaintiff / Defense</label>
+      <input type="text" id="side" name="side" />
+
+      <label for="type">Type of Case</label>
+      <input type="text" id="type" name="type" />
+
+      <label for="patient">Patient Name (Initials OK)</label>
+      <input type="text" id="patient" name="patient" />
+
+      <label for="dob">Date of Birth</label>
+      <input type="text" id="dob" name="dob" />
+
+      <label for="facility">Facility Name</label>
+      <input type="text" id="facility" name="facility" />
+
+      <label for="dates">Dates of Care</label>
+      <input type="text" id="dates" name="dates" />
+
+      <div class="checkbox-group">
+        <label><strong>Requested Services</strong></label>
+        <label><input type="checkbox" /> Medical Record Review</label>
+        <label><input type="checkbox" /> Wound Care Analysis</label>
+        <label><input type="checkbox" /> Long-Term Care Assessment</label>
+        <label><input type="checkbox" /> Expert Witness Prep</label>
+        <label><input type="checkbox" /> Compliance Consulting</label>
+        <label><input type="checkbox" /> Other: ____________</label>
+      </div>
+
+      <div class="checkbox-group">
+        <label><strong>Supporting Materials</strong></label>
+        <label><input type="checkbox" /> EMR / Chart</label>
+        <label><input type="checkbox" /> Facility Policies</label>
+        <label><input type="checkbox" /> Incident Reports</label>
+        <label><input type="checkbox" /> Photos / Imaging</label>
+        <label><input type="checkbox" /> Deposition Transcripts</label>
+        <label><input type="checkbox" /> Other: ____________</label>
+      </div>
+
+      <label for="notes">Notes / Special Instructions</label>
+      <textarea id="notes" name="notes" class="notes"></textarea>
+    </form>
+
+    <p class="footer-note">All information submitted is handled in full compliance with HIPAA and legal confidentiality standards.</p>
+  </main>
+
+  <footer>
+    <div>
+      <img src="../images/logo.png" alt="Catalyst Logo" />
+      <p>&copy; 2025 Catalyst Legal Nurse Consulting</p>
+    </div>
+    <ul>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="intake-form.html">Intake Form</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
