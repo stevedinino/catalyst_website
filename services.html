@@ -26,13 +26,14 @@
   </script>
 </head>
 <body>
-
   <header>
     <div class="logo">
       <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
     </div>
-    <nav>
-      <ul>
+     <!-- Hamburger toggle -->
+  <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
@@ -69,5 +70,12 @@
     </ul>
   </footer>
 </body>
-
 </html>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
