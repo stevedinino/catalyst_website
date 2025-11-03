@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
   <title>Janet DiNino – Legal Nurse Consultant for Elder Care Litigation</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Board-certified NP and legal nurse consultant offering expert case reviews in elder care, wound management, and compliance litigation.">
   <meta name="keywords" content="legal nurse consultant, elder care litigation, wound care expert, compliance review, expert witness, Janet DiNino, South Carolina">
@@ -36,8 +36,10 @@
     <div class="logo">
       <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
     </div>
-    <nav>
-      <ul>
+     <!-- Hamburger toggle -->
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+  <nav class="main-nav">
+      <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
@@ -93,3 +95,11 @@
 </body>
 
 </html>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
