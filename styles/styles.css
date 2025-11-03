@@ -1,64 +1,65 @@
-/* -----------------------------------
-   Reset & Base Styles
------------------------------------ */
-* {
+/* Base styles */
+body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
   color: #333;
-}
-p {
-  margin-bottom: 1rem;
-}
-a {
-  color: #005b96;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-.menu-toggle {
-  display: none;
-  font-size: 2em;
-  background: none;
-  border: none;
-  cursor: pointer;
+  line-height: 1.6;
 }
 
-/* -----------------------------------
-   Layout Containers
------------------------------------ */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #eee;
 }
+
+.logo {
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Page Layout Containers */
 .page-wrapper {
   padding: 2rem;
 }
+
 .page-layout {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
   padding: 2rem;
 }
+
 .content {
   flex: 1;
 }
+
+/* Sidebar Image Block */
 .sidebar-image {
   width: 280px;
   max-height: 90vh;
   overflow-y: auto;
 }
+
 .sidebar-image img {
   width: 100%;
   height: auto;
@@ -67,38 +68,33 @@ img {
   border-radius: 8px;
 }
 
-/* -----------------------------------
-   Header & Navigation
------------------------------------ */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-.logo img {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-}
-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-nav li a {
-  font-weight: 500;
+/* Typography */
+main {
+  padding: 2rem;
 }
 
-/* -----------------------------------
-   Call to Action Button
------------------------------------ */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Section Lists */
+section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+section li {
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Button */
 .cta {
   display: inline-block;
   background-color: #005b96;
@@ -107,132 +103,120 @@ nav li a {
   border-radius: 4px;
   font-weight: bold;
   margin-top: 1.5rem;
+  text-decoration: none;
 }
 .cta:hover {
   background-color: #004080;
 }
 
-/* -----------------------------------
-   Sections & Typography
------------------------------------ */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #666;
-}
-section ul {
-  margin: 1rem 0;
-  padding-left: 1.5rem;
-}
-section li {
-  margin-bottom: 0.5rem;
-}
-
-/* -----------------------------------
-   Footer
------------------------------------ */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem;
-  background-color: #eee;
-  font-size: 0.9rem;
-}
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-footer li {
-  margin-bottom: 0.5rem;
-}
-footer img {
-  height: 40px;
-  margin-bottom: 0.5rem;
-}
-
-/* -----------------------------------
-   Forms
------------------------------------ */
-.form-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+/* Form Styles */
+form {
+  max-width: 600px;
   margin-top: 2rem;
 }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .form-pair {
-  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
 }
-.form-pair label {
+
+label {
+  font-weight: bold;
   margin-bottom: 0.5rem;
-  font-weight: 500;
 }
-.form-pair input,
-.form-pair select,
-.form-pair textarea {
+
+input,
+textarea,
+select {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
 }
-.form-submit {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
+
+.form-submit {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .form-submit button {
   background-color: #005b96;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  width: auto;
-  align-self: flex-start;
 }
 .form-submit button:hover {
   background-color: #004080;
 }
-.file-upload-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.file-upload-row label {
-  font-weight: 500;
-  white-space: nowrap;
-}
-.file-upload-row input[type="file"] {
-  flex: 1;
+
+/* Footer */
+footer {
+  background-color: #eee;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-/* -----------------------------------
-   Responsive Styles
------------------------------------ */
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.highlight {
+  background-color: #ffffcc;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-  /* Layout Adjustments */
-  .page-layout {
-    flex-direction: column;
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 1000;
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  .sidebar-image {
+  .nav-links {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 1rem 0;
   }
 
-  header,
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .nav-links.active {
+    display: flex;
   }
 
   nav ul {
@@ -241,37 +225,19 @@ footer img {
     gap: 1rem;
   }
 
-  .form-pair {
-    flex: 1 1 100%;
-  }
-
-  /* Hamburger Menu */
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    z-index: 1000;
-  }
-
-  .nav-links {
-    display: none;
+  .page-layout {
     flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 3em;
-    right: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
-  .nav-links.active {
-    display: flex;
+  .sidebar-image {
+    display: none;
   }
 
-  .nav-links li {
-    padding: 1em;
-    text-align: center;
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-submit {
+    justify-content: center;
   }
 }
-
