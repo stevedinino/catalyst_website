@@ -303,11 +303,11 @@ footer {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    position: absolute;
+    position: relative;
     top: 50%;
     right: 1rem;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 1100;
     font-size: 2em;
     background: none;
     border: none;
@@ -318,14 +318,15 @@ footer {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 0;
     background: #fff;
     width: auto;
     min-width: max-content;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 1rem 0;
-  }
+    z-index: 1000;
+}
 
   .nav-links.active {
     display: flex;
