@@ -25,20 +25,42 @@
     "url": "https://catalystlegalnurse.com/about.html"
   }
   </script>
+  <style>
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .text-block {
+      flex: 1 1 60%;
+    }
+
+    .image-block {
+      flex: 1 1 35%;
+      text-align: right;
+    }
+
+    .image-block img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">
       <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
     </div>
-    <!-- Hamburger toggle -->
-  <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="main-nav">
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="upload.html" target="_blank" rel="noopener">Upload</a></li>
+        <li><a href="upload.html">Upload</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="privacy.html">Privacy</a></li>
         <li><a href="faq.html">FAQ</a></li>
@@ -47,23 +69,32 @@
   </header>
 
   <div class="page-wrapper">
-    <h1>About Catalyst</h1>
-    <p><strong>Cynthia “Janet” DiNino</strong> is an accomplished healthcare executive and advanced practice nurse with over 25 years of progressive leadership and clinical experience spanning hospice, palliative care, long-term care, home-based primary care, and healthcare administration. She is a <strong>Board-Certified Adult-Gerontology Primary Care Nurse Practitioner</strong>, <strong>Certified Legal Nurse Consultant</strong>, <strong>Licensed Nursing Home Administrator</strong>, <strong>Wound Care Certified Specialist</strong>, and <strong>Certified in Health Care Compliance</strong>.</p>
+    <div class="about-content">
+      <div class="text-block">
+        <h1>About Catalyst</h1>
 
-    <p>Janet currently serves as <strong>Chief Clinical Officer and Nurse Practitioner</strong> with SC House Calls, where she provides strategic clinical leadership, standardizes care delivery across diverse settings, and ensures excellence in patient outcomes through evidence-based practice. She leads initiatives to expand clinical programs, develop onboarding and education processes, and strengthen transitions-of-care pathways that have reduced hospital readmissions to below national benchmarks.</p>
+        <p><strong>Cynthia “Janet” DiNino</strong> is an accomplished healthcare executive and advanced practice nurse with over 25 years of progressive leadership and clinical experience spanning hospice, palliative care, long-term care, home-based primary care, and healthcare administration. She is a <strong>Board-Certified Adult-Gerontology Primary Care Nurse Practitioner</strong>, <strong>Certified Legal Nurse Consultant</strong>, <strong>Licensed Nursing Home Administrator</strong>, <strong>Wound Care Certified Specialist</strong>, and <strong>Certified in Health Care Compliance</strong>.</p>
 
-    <p>In addition to her executive leadership, Janet practices as an Adult-Gerontology Nurse Practitioner, providing comprehensive primary, hospice, and palliative care in home and facility settings across South Carolina, Georgia, Florida, and North Carolina. Her clinical expertise includes pain and symptom management, chronic disease management, and end-of-life care planning — with a steadfast commitment to patient dignity and family support.</p>
+        <p>Janet currently serves as <strong>Chief Clinical Officer and Nurse Practitioner</strong> with SC House Calls, where she provides strategic clinical leadership, standardizes care delivery across diverse settings, and ensures excellence in patient outcomes through evidence-based practice. She leads initiatives to expand clinical programs, develop onboarding and education processes, and strengthen transitions-of-care pathways that have reduced hospital readmissions to below national benchmarks.</p>
 
-    <p>As CEO of <strong>Catalyst Legal Nurse Consulting</strong>, Janet applies her extensive clinical and regulatory knowledge to assist attorneys in case analysis, causation review, expert witness preparation, and medical record interpretation. Her dual experience in healthcare operations and legal consulting uniquely positions her as a bridge between clinical practice, compliance, and risk management.</p>
+        <p>In addition to her executive leadership, Janet practices as an Adult-Gerontology Nurse Practitioner, providing comprehensive primary, hospice, and palliative care in home and facility settings across South Carolina, Georgia, Florida, and North Carolina. Her clinical expertise includes pain and symptom management, chronic disease management, and end-of-life care planning — with a steadfast commitment to patient dignity and family support.</p>
 
-    <p>Earlier in her career, Janet held multiple senior leadership roles with Agape Senior, including Chief Clinical Officer, Director of Operations, and Regional President, where she oversaw post-acute care, hospice, and physician practice operations across multiple facilities. Her leadership was instrumental in improving quality outcomes, compliance standards, and workforce development across the organization.</p>
+        <p>As CEO of <strong>Catalyst Legal Nurse Consulting</strong>, Janet applies her extensive clinical and regulatory knowledge to assist attorneys in case analysis, causation review, expert witness preparation, and medical record interpretation. Her dual experience in healthcare operations and legal consulting uniquely positions her as a bridge between clinical practice, compliance, and risk management.</p>
 
-    <p>Janet earned her <strong>Master of Science in Nursing Administration and Leadership</strong> and <strong>Bachelor of Science in Nursing</strong> from Western Governors University, and her <strong>Post-Master’s Certificate as an Adult-Gerontology Primary Care Nurse Practitioner</strong> from West Coast University. She began her nursing career as a graduate of the <strong>Presbyterian Hospital School of Nursing</strong> in Charlotte, North Carolina.</p>
+        <p>Earlier in her career, Janet held multiple senior leadership roles with Agape Senior, including Chief Clinical Officer, Director of Operations, and Regional President, where she oversaw post-acute care, hospice, and physician practice operations across multiple facilities. Her leadership was instrumental in improving quality outcomes, compliance standards, and workforce development across the organization.</p>
 
-    <p>A lifelong advocate for excellence in patient care and organizational integrity, Janet combines clinical expertise, executive acumen, and legal insight to drive innovation and quality in healthcare delivery.</p>
+        <p>Janet earned her <strong>Master of Science in Nursing Administration and Leadership</strong> and <strong>Bachelor of Science in Nursing</strong> from Western Governors University, and her <strong>Post-Master’s Certificate as an Adult-Gerontology Primary Care Nurse Practitioner</strong> from West Coast University. She began her nursing career as a graduate of the <strong>Presbyterian Hospital School of Nursing</strong> in Charlotte, North Carolina.</p>
 
-    <h2>Licenses & Certifications</h2>
-    <p>APRN (SC, GA, FL, NC; TN pending) | AGPCNP-C | LNHA | CLNC | WCC | CHC | CAPPM | BLS</p>
+        <p>A lifelong advocate for excellence in patient care and organizational integrity, Janet combines clinical expertise, executive acumen, and legal insight to drive innovation and quality in healthcare delivery.</p>
+
+        <h2>Licenses & Certifications</h2>
+        <p>APRN (SC, GA, FL, NC; TN pending) | AGPCNP-C | LNHA | CLNC | WCC | CHC | CAPPM | BLS</p>
+      </div>
+
+      <div class="image-block">
+        <img src="images/janet-hero.png" alt="Janet DiNino" />
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -72,15 +103,13 @@
     </div>
     <ul></ul>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
-
 </html>
-
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
