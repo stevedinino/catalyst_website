@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Testimonials | Catalyst Legal Nurse Consulting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Read testimonials from attorneys and healthcare professionals who trust Janet DiNino’s expertise in legal nurse consulting, wound care litigation, and elder care case review.">
-  <meta name="keywords" content="legal nurse consultant reviews, Janet DiNino testimonials, attorney feedback, wound care litigation support, elder care expert witness, Catalyst Legal Nurse Consulting">
-
+  <meta name="description" content="Read testimonials from attorneys and healthcare professionals who trust Janet DiNino’s expertise in legal nurse consulting, wound care litigation, and elder care case review." />
+  <meta name="keywords" content="legal nurse consultant reviews, Janet DiNino testimonials, attorney feedback, wound care litigation support, elder care expert witness, Catalyst Legal Nurse Consulting" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <!-- Schema.org markup for AI understanding -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/mobile.css" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,66 +26,63 @@
     <div class="logo">
       <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
     </div>
-    <!-- Hamburger toggle -->
-  <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="upload.html">Upload</a></li>
-        <li><a href="contact.html">Contact</a></li>
-       <li><a href="privacy.html">Privacy</a></li>
-       <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </nav>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="upload.html">Upload</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-<div class="page-wrapper">
-  <section class="section testimonials">
-    <h2 class="section-title">What Attorneys Say About Working With Janet</h2>
+  <main class="content">
+    <section class="testimonials">
+      <h1>What Attorneys Say About Working With Janet</h1>
+      <ul>
+        <li class="testimonial left">
+          <img src="images/avatar1.png" alt="Professional silhouette" class="avatar left" />
+          <div class="quote-block">
+            <p class="quote">“Janet’s insight was the turning point in our case. Her clarity and precision made all the difference.”</p>
+            <p class="attribution">— Attorney, Medical Malpractice Firm</p>
+          </div>
+        </li>
 
-    <ul>
-      <li class="testimonial left">
-        <img src="images/avatar1.png" alt="Professional silhouette" class="avatar left">
-        <div class="quote-block">
-          <p class="quote">“Janet’s insight was the turning point in our case. Her clarity and precision made all the difference.”</p>
-          <p class="attribution">— Attorney, Medical Malpractice Firm</p>
-        </div>
-      </li>
+        <li class="testimonial right">
+          <img src="images/avatar2.png" alt="Professional silhouette" class="avatar right" />
+          <div class="quote-block">
+            <p class="quote">“Her reports are litigation-ready and strategically sound. I trust her judgment implicitly.”</p>
+            <p class="attribution">— Partner, Personal Injury Practice</p>
+          </div>
+        </li>
 
-      <li class="testimonial right">
-        <img src="images/avatar2.png" alt="Professional silhouette" class="avatar right">
-        <div class="quote-block">
-          <p class="quote">“Her reports are litigation-ready and strategically sound. I trust her judgment implicitly.”</p>
-          <p class="attribution">— Partner, Personal Injury Practice</p>
-        </div>
-      </li>
+        <li class="testimonial left">
+          <img src="images/avatar1.png" alt="Professional silhouette" class="avatar left" />
+          <div class="quote-block">
+            <p class="quote">“Professional, responsive, and deeply knowledgeable. Janet is a true asset to any legal team.”</p>
+            <p class="attribution">— Trial Attorney, Complex Claims Division</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-      <li class="testimonial left">
-        <img src="images/avatar1.png" alt="Professional silhouette" class="avatar left">
-        <div class="quote-block">
-          <p class="quote">“Professional, responsive, and deeply knowledgeable. Janet is a true asset to any legal team.”</p>
-          <p class="attribution">— Trial Attorney, Complex Claims Division</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-</div>
   <footer>
-    <div>
-      <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
-    </div>
-    <ul>
-    </ul>
+    <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
