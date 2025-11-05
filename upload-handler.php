@@ -16,6 +16,7 @@ foreach ($requiredFields as $field) {
 
 // Handle file upload if present
 $uploadedFileName = "";
+$fileLink = "";
 if (!empty($_FILES["file"]["name"])) {
   $originalName = basename($_FILES["file"]["name"]);
   $fileType = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
@@ -40,6 +41,7 @@ if (!empty($_FILES["file"]["name"])) {
   }
 
   $uploadedFileName = $originalName;
+  $fileLink = "https://catalystlegalnurse.com/uploads/" . $uploadedFileName;
 }
 
 // Prepare CSV row
@@ -52,7 +54,7 @@ $csvRow = [
   $_POST["phone"],
   $_POST["case"],
   $_POST["notes"] ?? "",
-  $uploadedFileName
+  $fileLink
 ];
 
 // Write to CSV inside uploads folder
@@ -61,7 +63,7 @@ $csvFileExists = file_exists($csvFilePath);
 $csvFile = fopen($csvFilePath, "a");
 
 if (!$csvFileExists) {
-  fputcsv($csvFile, ["Timestamp", "Name", "Email", "Law Firm", "Phone", "Case Type", "Notes", "PDF File"]);
+  fputcsv($csvFile, ["Timestamp", "Name", "Email", "Law Firm", "Phone", "Case Type", "Notes", "PDF Link"]);
 }
 
 fputcsv($csvFile, $csvRow);
@@ -78,17 +80,15 @@ $body = "A new case submission has been received:\n\n" .
         "Phone: " . $_POST["phone"] . "\n" .
         "Case Type: " . $_POST["case"] . "\n" .
         "Notes: " . ($_POST["notes"] ?? "None") . "\n" .
-        "PDF File: " . ($uploadedFileName ?: "None") . "\n";
+        "PDF File: " . ($fileLink ?: "None") . "\n";
 
 $headers = "From: no-reply@catalystlegalnurse.com";
 
 mail($to, $subject, $body, $headers);
-
 
 // Confirmation message
 echo "Thank you, " . htmlspecialchars($_POST["name"]) . ". Your submission has been recorded.";
 
 header("Location: index.html");
 exit;
-
 ?>
