@@ -2,80 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services | Catalyst Legal Nurse Consulting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore legal nurse consulting services offered by Janet DiNino, including case screening, wound care analysis, expert witness support, and compliance review.">
-  <meta name="keywords" content="legal nurse consulting services, case screening, wound care litigation, expert witness, compliance review, Janet DiNino, Catalyst Legal Nurse Consulting">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services – Legal Nurse Consulting for Elder Care Litigation</title>
+  <meta name="description" content="Explore Janet DiNino’s strategic legal nurse consulting services for elder care, wound management, and compliance litigation." />
+  <meta name="keywords" content="legal nurse consultant services, elder care litigation, wound care, compliance, expert witness, Janet DiNino" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-   <link rel="stylesheet" href="styles/styles.css" />
-  <!-- Schema.org markup for AI understanding -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "Catalyst Legal Nurse Consulting",
-      "url": "https://catalystlegalnurse.com/services.html"
-    },
-    "serviceType": "Legal Nurse Consulting",
-    "areaServed": "United States",
-    "description": "Legal nurse consulting services including case screening, wound care analysis, expert witness support, and compliance review."
-  }
-  </script>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/mobile.css" />
 </head>
 <body>
   <header>
     <div class="logo">
       <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
     </div>
-     <!-- Hamburger toggle -->
-  <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="upload.html">Upload</a></li>
-        <li><a href="contact.html">Contact</a></li>
-       <li><a href="privacy.html">Privacy</a></li>
-       <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </nav>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="upload.html">Upload</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="page-wrapper">
-    <h1>Strategic Services</h1>
-    <p>Catalyst Legal Nurse Consulting provides litigation-relevant expertise across a range of clinical domains. Each service is tailored to support attorneys with clear, defensible insights grounded in decades of healthcare leadership.</p>
+  <main class="content">
+    <h1>Strategic Legal Nurse Consulting Services</h1>
+    <p class="subtitle">Janet DiNino offers litigation-relevant expertise grounded in clinical precision and regulatory insight.</p>
 
-    <ul>
-      <li><strong>Medical Record Review:</strong> Comprehensive analysis of EMRs, facility documentation, and clinical timelines.</li>
-      <li><strong>Wound Care Litigation Support:</strong> Expert evaluation of wound progression, treatment protocols, and standards of care.</li>
-      <li><strong>Long-Term Care Case Consulting:</strong> Insight into nursing home operations, staffing, compliance, and resident outcomes.</li>
-      <li><strong>Compliance & Regulatory Review:</strong> Identification of violations, gaps, and policy failures tied to federal and state standards.</li>
-      <li><strong>Expert Witness Preparation:</strong> Strategic guidance for deposition, testimony, and cross-examination readiness.</li>
-    </ul>
+    <section>
+      <h2>Medical Record Review</h2>
+      <ul>
+        <li>Detailed analysis of nursing documentation and care protocols</li>
+        <li>Identification of deviations from standards of care</li>
+        <li>Clarification of complex clinical timelines</li>
+      </ul>
+    </section>
 
-     <p>Have questions about how legal nurse consulting works? Visit our <a href="faq.html" target="_blank" rel="noopener">Frequently Asked Questions</a> page to learn more.</p>
+    <section>
+      <h2>Wound Care Litigation Support</h2>
+      <ul>
+        <li>Assessment of wound progression and treatment plans</li>
+        <li>Evaluation of documentation for pressure injury staging</li>
+        <li>Expert insight into wound care standards and compliance</li>
+      </ul>
+    </section>
 
-    <p><a href="upload.html" class="cta">Submit Case Materials</a></p>
-  </div>
+    <section>
+      <h2>Long-Term Care Case Consulting</h2>
+      <ul>
+        <li>Review of facility policies and interdisciplinary communication</li>
+        <li>Analysis of staffing patterns and care delivery</li>
+        <li>Support for cases involving nursing home or hospice care</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Compliance and Regulatory Insight</h2>
+      <ul>
+        <li>Interpretation of CMS guidelines and state regulations</li>
+        <li>Identification of survey deficiencies and risk exposure</li>
+        <li>Consultation on documentation practices and audit readiness</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Expert Witness Preparation</h2>
+      <ul>
+        <li>Case strategy consultation for attorneys</li>
+        <li>Preparation of expert reports and affidavits</li>
+        <li>Support for deposition and trial testimony</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <div>
-      <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
-    </div>
-    <ul>
-    </ul>
+    <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
