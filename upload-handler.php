@@ -59,7 +59,7 @@ if (!empty($_FILES["file"]["name"])) {
   }
 
   $uploadedFileName = $originalName;
-  $fileLink = "https://catalystlegalnurse.com/uploads/" . $uploadedFileName;
+  $fileLink = "https://catalystlegalnurse.com/uploads/" . rawurlencode($uploadedFileName);
 }
 
 // Prepare CSV row

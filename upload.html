@@ -46,7 +46,17 @@
         </div>
         <div class="form-pair">
           <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required />
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            required
+            inputmode="numeric"
+            maxlength="20"
+            pattern="^\+?[0-9\s\-().]{10,20}$"
+            title="Enter a valid phone number using digits only (e.g., +1 123-456-7890)"
+            oninput="this.value = this.value.replace(/[^0-9\s\-().+]/g, '')"
+          />
         </div>
         <div class="form-pair">
           <label for="case">Case Type:</label>
@@ -88,9 +98,14 @@
 
   <script>
     document.getElementById('uploadForm').addEventListener('submit', function(e) {
-      const fileInput = document.getElementById('file');
-      const maxSize = 200 * 1024 * 1024; // 200MB
+      if (!this.checkValidity()) {
+        e.preventDefault();
+        this.reportValidity();
+        return;
+      }
 
+      const fileInput = document.getElementById('file');
+      const maxSize = 200 * 1024 * 1024;
       if (fileInput.files[0] && fileInput.files[0].size > maxSize) {
         e.preventDefault();
         alert("File exceeds the 200MB limit. Please upload a smaller PDF.");
