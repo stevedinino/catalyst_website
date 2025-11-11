@@ -49,6 +49,30 @@ nav a {
   flex: 1;
 }
 
+/* Uploads Page */
+.upload-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.content {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 400px;
+}
+
+.sidebar img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
 /* Sidebar Image Block */
 .sidebar-image {
   width: 280px;
@@ -188,6 +212,91 @@ nav a {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+}
+
+/* Error Page Layout */
+.error-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff8f8;
+  text-align: center;
+}
+
+.error-container h1 {
+  color: #b00020;
+  margin-bottom: 1rem;
+}
+
+.error-details {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.retry-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #b00020;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.retry-button:hover {
+  background-color: #900018;
+}
+
+/* Success Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: #006c6c;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  background-color: #006c6c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #004f4f;
 }
 
 /* Footer */

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submission Error | Catalyst Legal Nurse Consulting</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/mobile.css" />
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
+    </div>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <!-- No navigation links included -->
+      </ul>
+    </nav>
+  </header>
+
+  <div class="error-container">
+    <h1>Submission Error</h1>
+    <div class="error-details" id="errorMessage">
+      Something went wrong with your submission.
+    </div>
+    <a href="upload.html" class="retry-button">Retry Submission</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const fields = params.get("fields");
+
+    const errorMessage = document.getElementById("errorMessage");
+
+    if (type === "missing" && fields) {
+      const fieldList = fields.split(",").map(f => f.charAt(0).toUpperCase() + f.slice(1)).join(", ");
+      errorMessage.textContent = `Missing required fields: ${fieldList}. Please complete all required fields and try again.`;
+    } else if (type === "type") {
+      errorMessage.textContent = "Uploaded file must be a PDF. Please try again.";
+    } else if (type === "toolarge") {
+      errorMessage.textContent = "Uploaded file exceeds the 200MB limit. Please upload a smaller PDF.";
+    } else if (type === "uploadfail") {
+      errorMessage.textContent = "File upload failed. Please try again or contact support.";
+    } else {
+      errorMessage.textContent = "An unexpected error occurred. Please try again.";
+    }
+  </script>
+</body>
+</html>

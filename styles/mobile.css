@@ -1,4 +1,5 @@
 @media (max-width: 768px) {
+  /* Navigation toggle button */
   .menu-toggle {
     display: block;
     position: relative;
@@ -12,20 +13,21 @@
     cursor: pointer;
   }
 
-.nav-links {
-  transition: top 0.5s ease-in-out;
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 1em;
-  right: 0;
-  background: #fff;
-  width: auto;
-  min-width: max-content;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  padding: 1rem 0.5rem; /* vertical | horizontal */
-  z-index: 1000;
-}
+  /* Mobile nav dropdown */
+  .nav-links {
+    transition: top 0.5s ease-in-out;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 1em;
+    right: 0;
+    background: #fff;
+    width: auto;
+    min-width: max-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0.5rem;
+    z-index: 1000;
+  }
 
   .nav-links.active {
     display: flex;
@@ -37,19 +39,68 @@
     gap: 1rem;
   }
 
-  .page-layout {
+  /* Layout stacks vertically */
+  .page-layout,
+  .main-wrapper {
     flex-direction: column;
   }
 
+  /* Hide sidebar image */
+  .sidebar,
   .sidebar-image {
     display: none;
   }
 
+  /* Form grid becomes single column */
   .form-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
   }
 
+  /* Hide vertical divider */
+  .form-grid::before {
+    display: none;
+  }
+
+  /* Remove column padding */
+  .form-pair {
+    padding: 0;
+  }
+
+  /* Center submit button */
   .form-submit {
+    display: flex;
     justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  /* Add spacing above file upload */
+  .file-upload-row {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Optional: reduce heading size */
+  h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Optional: adjust footer spacing */
+  footer {
+    text-align: center;
+    padding: 1rem;
   }
 }

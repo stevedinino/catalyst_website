@@ -87,10 +87,31 @@
       <img src="images/gavel_and_cap.JPG" alt="Image of nurse cap and gavel" />
     </aside>
   </div>
+  
+  <div id="confirmationModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Submission Received</h2>
+      <p>Your case submission has been received successfully.</p>
+      <button id="confirmButton">OK</button>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
   </footer>
+
+<!-- Confirmation modal logic -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "1") {
+      const modal = document.getElementById("confirmationModal");
+      modal.classList.remove("hidden");
+
+      document.getElementById("confirmButton").addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    }
+  </script>
 
   <script>
     const toggle = document.querySelector('.menu-toggle');
