@@ -26,71 +26,77 @@
     </nav>
   </header>
 
-  <main class="content">
-    <h1>Secure Document Upload</h1>
-    <p><strong>Maximum file size: 200MB. Only PDF files are accepted.</strong></p>
+  <div class="upload-wrapper">
+    <main class="content">
+      <h1>Secure Document Upload</h1>
+      <p><strong>Maximum file size: 200MB. Only PDF files are accepted.</strong></p>
 
-    <form action="upload-handler.php" method="post" enctype="multipart/form-data" id="uploadForm">
-      <div class="form-grid">
-        <div class="form-pair">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name" required />
+      <form action="upload-handler.php" method="post" enctype="multipart/form-data" id="uploadForm">
+        <div class="form-grid">
+          <div class="form-pair">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required
+              pattern="[A-Za-z\s]+"
+              title="Use letters and spaces only" />
+          </div>
+          <div class="form-pair">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-pair">
+            <label for="firm">Law Firm:</label>
+            <input type="text" id="firm" name="firm" required
+              pattern="[A-Za-z0-9\s]+"
+              title="Use letters, numbers, and spaces only" />
+          </div>
+          <div class="form-pair">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required
+              title="Enter a valid phone number with 10–20 digits"
+              maxlength="20" />
+          </div>
+          <div class="form-pair">
+            <label for="case">Case Type:</label>
+            <select id="case" name="case" required>
+              <option value="">-- Select a Case Type --</option>
+              <option value="Wound Care">Wound Care</option>
+              <option value="Long-Term Care">Long-Term Care</option>
+              <option value="Hospice or Palliative">Hospice or Palliative</option>
+              <option value="Compliance Review">Compliance Review</option>
+              <option value="Medication Error">Medication Error</option>
+              <option value="Fall or Injury">Fall or Injury</option>
+              <option value="Staffing or Supervision">Staffing or Supervision</option>
+              <option value="Regulatory Violation">Regulatory Violation</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-pair">
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="4" maxlength="1000"></textarea>
+          </div>
         </div>
-        <div class="form-pair">
-          <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-pair">
-          <label for="firm">Law Firm:</label>
-          <input type="text" id="firm" name="firm" required />
-        </div>
-        <div class="form-pair">
-          <label for="phone">Phone Number:</label>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            required
-            inputmode="numeric"
-            maxlength="20"
-            pattern="^\+?[0-9\s\-().]{10,20}$"
-            title="Enter a valid phone number using digits only (e.g., +1 123-456-7890)"
-            oninput="this.value = this.value.replace(/[^0-9\s\-().+]/g, '')"
-          />
-        </div>
-        <div class="form-pair">
-          <label for="case">Case Type:</label>
-          <select id="case" name="case" required>
-            <option value="">-- Select a Case Type --</option>
-            <option value="Wound Care">Wound Care</option>
-            <option value="Long-Term Care">Long-Term Care</option>
-            <option value="Hospice or Palliative">Hospice or Palliative</option>
-            <option value="Compliance Review">Compliance Review</option>
-            <option value="Medication Error">Medication Error</option>
-            <option value="Fall or Injury">Fall or Injury</option>
-            <option value="Staffing or Supervision">Staffing or Supervision</option>
-            <option value="Regulatory Violation">Regulatory Violation</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-pair">
-          <label for="notes">Notes:</label>
-          <textarea id="notes" name="notes" rows="4"></textarea>
-        </div>
-      </div>
 
-      <div class="file-upload-row">
-        <label for="file">Upload File:</label>
-        <input type="file" id="file" name="file" required />
-      </div>
+        <hr class="form-divider" />
 
-      <div class="form-submit">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+        <div class="file-upload-row">
+          <label for="file">Upload File:</label>
+          <input type="file" id="file" name="file" accept=".pdf" />
+        </div>
 
-    <p>If you prefer to send documents via encrypted email, contact Janet directly at <a href="mailto:janet@catalystlegalnurse.com">janet@catalystlegalnurse.com</a>.</p>
-  </main>
+        <div class="form-submit">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+
+      <p>If you prefer to send documents via encrypted email, contact Janet directly at
+        <a href="mailto:janet@catalystlegalnurse.com">janet@catalystlegalnurse.com</a>.
+      </p>
+    </main>
+
+    <aside class="sidebar">
+      <img src="images/frontpage.png" alt="Legal Nurse Consulting" />
+    </aside>
+  </div>
 
   <footer>
     <p>&copy; 2025 Catalyst Legal Nurse Consulting of SC, LLC</p>
@@ -98,17 +104,50 @@
 
   <script>
     document.getElementById('uploadForm').addEventListener('submit', function(e) {
-      if (!this.checkValidity()) {
+      const form = this;
+      const inputs = form.querySelectorAll('input, select, textarea');
+      let allValid = true;
+
+      inputs.forEach(input => {
+        if (!input.checkValidity()) {
+          allValid = false;
+          input.reportValidity();
+        }
+      });
+
+      if (!allValid) {
         e.preventDefault();
-        this.reportValidity();
         return;
       }
 
-      const fileInput = document.getElementById('file');
-      const maxSize = 200 * 1024 * 1024;
-      if (fileInput.files[0] && fileInput.files[0].size > maxSize) {
+      // Phone number digit count validation
+      const phoneInput = document.getElementById('phone');
+      const digitsOnly = phoneInput.value.replace(/\D/g, '');
+      if (digitsOnly.length < 10 || digitsOnly.length > 20) {
         e.preventDefault();
-        alert("File exceeds the 200MB limit. Please upload a smaller PDF.");
+        alert("Phone number must contain between 10 and 20 digits.");
+        phoneInput.focus();
+        return;
+      }
+
+      // File validation only if a file is selected
+      const fileInput = document.getElementById('file');
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const maxSize = 200 * 1024 * 1024;
+        const allowedTypes = ['application/pdf'];
+
+        if (!allowedTypes.includes(file.type)) {
+          e.preventDefault();
+          alert("Only PDF files are allowed.");
+          return;
+        }
+
+        if (file.size > maxSize) {
+          e.preventDefault();
+          alert("File exceeds the 200MB limit. Please upload a smaller PDF.");
+          return;
+        }
       }
     });
   </script>

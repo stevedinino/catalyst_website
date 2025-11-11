@@ -59,10 +59,23 @@ form {
   margin-top: 2rem;
 }
 
+.form-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 3rem;
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 .form-pair {

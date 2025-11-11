@@ -4,12 +4,6 @@ if (!is_dir($uploadDir)) {
   mkdir($uploadDir, 0755, true);
 }
 
-// Detect oversized POST (PHP discards body silently)
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST) && empty($_FILES)) {
-  header("Location: upload.html?error=oversize");
-  exit;
-}
-
 // Validate required fields
 $requiredFields = ['name', 'email', 'firm', 'phone', 'case'];
 $errors = [];
@@ -22,26 +16,26 @@ foreach ($requiredFields as $field) {
 
 if (!empty($errors)) {
   $errorQuery = implode(",", $errors);
-  header("Location: upload.html?error=missing&fields=" . urlencode($errorQuery));
+  header("Location: error-page.html?type=missing&fields=" . urlencode($errorQuery));
   exit;
 }
 
-// Handle file upload
+// Handle file upload (optional)
 $uploadedFileName = "";
 $fileLink = "";
 
-if (!empty($_FILES["file"]["name"])) {
+if (isset($_FILES["file"]) && $_FILES["file"]["error"] === UPLOAD_ERR_OK) {
   $originalName = basename($_FILES["file"]["name"]);
   $fileType = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
   $fileSize = $_FILES["file"]["size"];
 
   if ($fileType !== "pdf") {
-    header("Location: upload.html?error=type");
+    header("Location: error-page.html?type=type");
     exit;
   }
 
   if ($fileSize > 200 * 1024 * 1024) {
-    header("Location: upload.html?error=toolarge");
+    header("Location: error-page.html?type=toolarge");
     exit;
   }
 
@@ -54,7 +48,7 @@ if (!empty($_FILES["file"]["name"])) {
   }
 
   if (!move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
-    header("Location: upload.html?error=uploadfail");
+    header("Location: error-page.html?type=uploadfail");
     exit;
   }
 
