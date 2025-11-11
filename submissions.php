@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clear'])) {
   fclose($file);
   exit;
 }
-
+ 
 // Load data
 $rows = [];
 $headers = [];
