@@ -88,6 +88,11 @@ nav a {
   border-radius: 8px;
 }
 
+.sidebar-image.padded {
+  padding-right: 1rem; /* or margin-right if preferred */
+  box-sizing: border-box;
+}
+
 /* Hero Image Block */
 .hero-image {
   width: 280px;
