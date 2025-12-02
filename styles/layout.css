@@ -1,11 +1,14 @@
 /* Header and Navigation */
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:0.5rem 1rem;
+  padding: 0.5rem 1rem;
   background: #fff;
+  z-index: 1000; /* keeps it above other content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* optional subtle shadow */
 }
 
 .logo {
