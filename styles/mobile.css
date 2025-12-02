@@ -45,9 +45,10 @@
     flex-direction: column;
   }
 
-  /* Hide sidebar image */
+  /* Hide sidebar and hero images */
   .sidebar,
-  .sidebar-image {
+  .sidebar-image,
+  .hero-image {
     display: none;
   }
 
@@ -90,7 +91,7 @@
     font-size: 1.75rem;
     text-align: center;
   }
- 
+
   h2 {
     font-size: 1.25rem;
     text-align: center;

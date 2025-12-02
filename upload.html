@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upload | Catalyst Legal Nurse Consulting</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/layout.css" />
   <link rel="stylesheet" href="styles/mobile.css" />
@@ -13,17 +14,20 @@
     <div class="logo">
       <a href="index.html"><img src="images/logo.png" alt="Catalyst Logo" /></a>
     </div>
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="upload.html">Upload</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </nav>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="upload.html">Upload</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <div class="upload-wrapper">
@@ -103,6 +107,14 @@
   </footer>
 
   <script>
+    // Hamburger menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Upload form validation
     document.getElementById('uploadForm').addEventListener('submit', function(e) {
       const form = this;
       const inputs = form.querySelectorAll('input, select, textarea');
